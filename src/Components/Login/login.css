@@ -1,0 +1,14 @@
+.login{
+	margin-top: 20px;
+	text-align: center;
+}
+
+.login__label{
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.login__submit{
+	margin-top: 10px;
+	padding: 5px 30px;
+}
