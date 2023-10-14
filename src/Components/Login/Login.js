@@ -1,0 +1,38 @@
+import React from "react";
+import './login.css'
+
+class Login extends React.Component{
+	constructor(){
+		super()
+		this.state = {
+			username:'',
+			password:''
+		}
+	}
+
+	onFieldChange = (event)=>{
+		this.setState({
+			[event.target.name]:event.target.value
+		})
+	}
+
+	onFormSubmit = (event)=>{
+		event.preventDefault()
+	}
+
+	render(){
+		return (
+			<form className="login" onSubmit={this.onFormSubmit}>
+				<div className="container">
+					<label className="login__label">Login:</label>
+					<input className="login__username control" name='username' value={this.state.username} onInput={this.onFieldChange}></input>
+					<label className="login__label">Password:</label>
+					<input className="login__password control" type="password" name="password" value={this.state.password} onInput={this.onFieldChange}></input>
+					<button className="login__submit control">Login</button>
+				</div>
+			</form>
+		)
+	}
+}
+
+export default Login
