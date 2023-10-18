@@ -4,6 +4,10 @@
 	text-align: center;
 }
 
+.login__title{
+	font-size: 40px;
+}
+
 .login__label{
 	display: inline-block;
 	margin-top: 10px;

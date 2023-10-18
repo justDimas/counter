@@ -1,38 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import style from './style.module.css'
 
-class Login extends React.Component{
-	constructor(){
-		super()
-		this.state = {
-			username:'',
-			password:''
-		}
-	}
+function Login(){
+ 	const [state, changeState] = useState({username:'', password:''})
 
-	onFieldChange = (event)=>{
-		this.setState({
-			[event.target.name]:event.target.value
-		})
-	}
-
-	onFormSubmit = (event)=>{
-		event.preventDefault()
-	}
-
-	render(){
-		return (
-			<div className="container">
-				<form className={style.login} onSubmit={this.onFormSubmit}>
-					<label className={style.login__label}>Login:</label>
-					<input className={[style.login__username] + ' control'} name='username' value={this.state.username} onInput={this.onFieldChange}></input>
-					<label className={style.login__label}>Password:</label>
-					<input className={[style.login__password] + ' control'} type="password" name="password" value={this.state.password} onInput={this.onFieldChange}></input>
-					<button className={[style.login__submit] + ' control'}>Login</button>
-				</form>
-			</div>
-		)
-	}
+	return (
+		<div className="container">
+			<form className={style.login} onSubmit={(e)=>{e.preventDefault()}}>
+				<div className={style.login__title}>Log in</div>
+				<label className={style.login__label}>Username:</label>
+				<input className={[style.login__username] + ' control'} 
+					    name='username' 
+						 value={state.username} 
+						 onInput={(event)=>changeState({[event.target.name]:event.target.value})}/>
+				<label className={style.login__label}>Password:</label>
+				<input className={[style.login__password] + ' control'} 
+						 type="password" 
+						 name="password" 
+						 value={state.password} 
+						 onInput={(event)=>changeState({[event.target.name]:event.target.value})}/>
+				<button className={[style.login__submit] + ' control'}>Login</button>
+			</form>
+		</div>
+	)
 }
 
 export default Login
