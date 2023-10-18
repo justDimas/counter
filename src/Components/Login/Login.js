@@ -24,11 +24,11 @@ class Login extends React.Component{
 		return (
 			<div className="container">
 				<form className={style.login} onSubmit={this.onFormSubmit}>
-						<label className={style.login__label}>Login:</label>
-						<input className={[style.login__username] + ' control'} name='username' value={this.state.username} onInput={this.onFieldChange}></input>
-						<label className={style.login__label}>Password:</label>
-						<input className={[style.login__password] + ' control'} type="password" name="password" value={this.state.password} onInput={this.onFieldChange}></input>
-						<button className={[style.login__submit] + ' control'}>Login</button>
+					<label className={style.login__label}>Login:</label>
+					<input className={[style.login__username] + ' control'} name='username' value={this.state.username} onInput={this.onFieldChange}></input>
+					<label className={style.login__label}>Password:</label>
+					<input className={[style.login__password] + ' control'} type="password" name="password" value={this.state.password} onInput={this.onFieldChange}></input>
+					<button className={[style.login__submit] + ' control'}>Login</button>
 				</form>
 			</div>
 		)

@@ -1,0 +1,16 @@
+.country__image{
+	border: 1px solid burlywood;
+	aspect-ratio: 16/9;
+	width: 100%;
+	object-fit: contain;
+}
+
+.country__form{
+	margin-top: 10px;
+}
+
+.country__button{
+	margin-top: 10px;
+	display: block;
+	width: 100%;
+}

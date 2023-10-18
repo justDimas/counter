@@ -13,12 +13,10 @@ class Comments extends React.Component{
 		const response = await fetch('https://jsonplaceholder.typicode.com/comments')
 		const data = await response.json()
 		this.setState({comments:data})
-		console.log(data);
 	}
 
 	render(){
 		const commentList = this.state.comments?.map( comment => <Comment key={comment.id} value={comment}/>) ?? null
-		console.log(commentList);
 		return (
 			<div className="container">
 				<ul className="comments">
