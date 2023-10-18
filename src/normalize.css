@@ -4,7 +4,9 @@ body {
 
 .container{
 	width: 200px;
-	margin: 0 auto;
+	margin: 10px auto 0;
+	box-shadow: 0 0 10px black;
+	padding: 10px;
 }
 
 .control{
@@ -20,4 +22,10 @@ body {
 }
 .control:active{
 	background-color: burlywood;
+}
+
+ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
 }
