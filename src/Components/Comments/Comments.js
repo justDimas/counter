@@ -1,33 +1,26 @@
-import React from "react"
+import {Component, useEffect, useState } from "react"
 import './comments.css'
 
-class Comments extends React.Component{
-	constructor(props){
-		super(props)
-		this.state = {
-			comments : null
-		}
-	}
-	
-	async componentDidMount(){
-		const response = await fetch('https://jsonplaceholder.typicode.com/comments')
-		const data = await response.json()
-		this.setState({comments:data})
-	}
 
-	render(){
-		const commentList = this.state.comments?.map( comment => <Comment key={comment.id} value={comment}/>) ?? null
-		return (
-			<div className="container">
-				<ul className="comments">
-						{commentList}
-				</ul>
-			</div>
-		)
-	}
+function Comments(){
+	let [state, changeState] = useState({comments:[]})
+	
+	useEffect(()=>{
+		fetch('https://jsonplaceholder.typicode.com/comments')
+			.then(resolve=> resolve.json())
+			.then(data=>changeState({comments:data}))
+	},[])
+	
+	return (
+		<div className="container">
+			<ul className="comments">
+				{state.comments?.map( comment => <View key={comment.id} value={comment}/> ) ?? null}
+			</ul>
+		</div>
+	)
 }
 
-class Comment extends React.Component{
+class View extends Component{
 	render(){
 		const {postId, id, name, body, email} = this.props.value
 		return (
