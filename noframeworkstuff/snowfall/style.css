@@ -1,0 +1,74 @@
+.wrapper{
+	background-color: black;	
+	position: absolute;
+	inset: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container{
+	position: relative;
+	background-color: white;
+	border-radius: 50px;
+	box-shadow: 0 0 40px 50px white;
+	width: 250px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button{
+	border: 0;
+	background-color: inherit;	
+	cursor: pointer;
+	padding: 10px 20px;
+	border-radius: 10px;
+	transition: transform .1s, box-shadow .1s;
+}
+
+.button:hover{
+	transform: translate(-3px, -3px);
+	box-shadow: 3px 3px 5px black;
+}
+
+.button:active{
+	transform: translate(0px, 0px);
+	box-shadow: 0px 0px 5px black;
+}
+
+.star{
+	position: absolute;
+	color: lightblue;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .3s;
+}
+
+.star_active{
+	visibility: visible;
+	animation: starFall 1s linear;
+}
+
+@keyframes starFall {
+	0%{
+		opacity: 1;
+		translate: 0 0px;
+	}
+	25%{
+		translate: 5px 5px;
+
+	}
+	50%{
+		translate:0 10px;
+	}
+	75%{
+		translate:-5px 15px;
+		opacity: 1;
+	}
+	100%{
+		translate: 0 20px;
+		opacity: 0;
+	}
+}

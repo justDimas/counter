@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Snowfall</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<span class="star">*</span>
+			<span class="star">*</span>
+			<span class="star">*</span>
+			<span class="star">*</span>
+			<span class="star">*</span>
+			<span class="star">*</span>
+			<span class="star">*</span>
+			<span class="star">*</span>
+			<span class="star">*</span>
+			<span class="star">*</span>
+			<button class="button">TAP</button>
+		</div>
+	</div>
+	<script>
+		const button = document.querySelector('.button')
+		const stars = document.querySelectorAll('.star')
+		button.addEventListener('click', starsBlowsUp)
+
+		document.addEventListener('DOMContentLoaded', setStarsPosition)
+
+		function setStarsPosition(){
+			stars.forEach( star=>{
+				const coords = {
+					x: Math.floor(Math.random()*250),
+					y: Math.floor(Math.random()*150)
+				}
+				star.style.top = `${coords.y}px`
+				star.style.left = `${coords.x}px`
+			
+				const scale = Math.floor(Math.random() * 3 + 1)
+				star.style.scale = `${scale}`
+			} )
+		}
+
+		function starsBlowsUp(){
+			stars.forEach( star => star.classList.add('star_active') )
+			setTimeout(()=>{
+				stars.forEach( star => star.classList.remove('star_active') )
+			}, 1000)
+			setStarsPosition()
+		}
+	</script>
+</body>
+</html>
