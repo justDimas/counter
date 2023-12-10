@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__body">
+					<h1 class="header__logo">Logo</h1>
+					<nav class="header__nav">
+						<ul class="header__list">
+							<li class="header__item"><a href="#" class="header__link">Lorem</a></li>
+							<li class="header__item"><a href="#" class="header__link">ipsum</a></li>
+							<li class="header__item"><a href="#" class="header__link">dolor</a></li>
+							<li class="header__item"><a href="#" class="header__link">sit</a></li>
+							<li class="header__item"><a href="#" class="header__link">amet</a></li>
+						</ul>
+					</nav>
+					<div class="header__burger">
+						<span class="header__burger-line"></span>
+						<span class="header__burger-line"></span>
+						<span class="header__burger-line"></span>
+					</div>
+				</div>
+			</div>
+		</header>
+	</div>
+	<script>
+		const burger = document.querySelector('.header__burger')
+		const nav = document.querySelector('.header__nav')
+
+		burger.addEventListener('click', ()=>{
+			nav.classList.toggle('header__nav_active')
+			burger.classList.toggle('header__burger_active')
+		})
+	</script>
+</body>
+</html>
